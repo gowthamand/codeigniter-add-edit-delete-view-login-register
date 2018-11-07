@@ -1,4 +1,4 @@
-# <a href="https://github.com/gowthamand/django-crud-ajax-login-register-fileupload">Django Crud, Ajax, Login, Register,Dashboard Etc..</a>
+# <a href="https://github.com/gowthamand/codeIgniter-add-edit-delete-view-login-register">CodeIgniter Crud, Ajax, Login, Register,Dashboard Etc..</a>
 ### Status
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](#)
@@ -41,8 +41,9 @@
 ```
 # Dont't Forgot Give satr and fork
 
+
 ## Screen Shots
 
 [![SB Admin Preview](https://github.com/gowthamand/django-crud-ajax-login-register-fileupload/blob/master/screen_shots/1.png)](https://github.com/gowthamand/django-crud-ajax-login-register-fileupload/)
 
-# Now Django Project Ready
+# Now CodeIgniter Project Ready
