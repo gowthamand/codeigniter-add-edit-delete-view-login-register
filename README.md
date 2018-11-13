@@ -24,12 +24,12 @@
 
  2. Change database.php(application/config) MYSQL CONFIGURATIONS (name, user, password)
 
- 3.  import Your demo.sql file to local
+ 3.  import Your test.sql(sql folder) file to local
 
  4. configure Apache server
 
 ```
-# Dont't Forgot Give satr and fork
+# Dont't Forgot Give star(*) and fork(^)
 
 
 ## Screen Shots
