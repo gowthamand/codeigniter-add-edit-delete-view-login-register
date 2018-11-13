@@ -34,6 +34,6 @@
 
 ## Screen Shots
 
-[![SB Admin Preview](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register/screenshots/codei.png)](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register)
+[![SB Admin Preview](https://raw.githubusercontent.com/gowthamand/codeigniter-add-edit-delete-view-login-register/master/screenshots/codei.png)](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register)
 
 # Now CodeIgniter Project Ready
