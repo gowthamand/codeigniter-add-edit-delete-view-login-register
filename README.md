@@ -34,6 +34,6 @@
 
 ## Screen Shots
 
-[![SB Admin Preview](https://github.com/gowthamand/django-crud-ajax-login-register-fileupload/blob/master/screen_shots/1.png)](https://github.com/gowthamand/django-crud-ajax-login-register-fileupload/)
+[![SB Admin Preview](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register/screenshots/codei.png)](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register)
 
 # Now CodeIgniter Project Ready
