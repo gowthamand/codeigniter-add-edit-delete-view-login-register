@@ -10,6 +10,16 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
+                <?php if($this->session->flashdata('msg_success')) { ?>
+                    <div class="alert alert-success">
+                         <?php echo $this->session->flashdata('msg_success'); ?>       
+                    </div>
+                 <?php } ?>
+                 <?php if($this->session->flashdata('msg_error')) { ?>
+                    <div class="alert alert-danger">
+                         <?php echo $this->session->flashdata('msg_error'); ?>       
+                    </div>
+                <?php } ?>
                 <div class="panel-heading">
                     <h3 class="panel-title">Please Sign In</h3>
                 </div>
@@ -36,10 +46,12 @@
                             </div>
                         </fieldset>
                     <?php echo form_close(); ?>
+					<div class="col-md-12">
+						<p>Email: gowthaman.nkl1@gmail.com </p>
+						<p>Password: Welcome@123</p>
+					</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<p style="color:green; font-style:normal"><?php echo $this->session->flashdata('msg_success'); ?></p>
-<p style="color:red; font-style:normal"><?php echo $this->session->flashdata('msg_error'); ?></p>

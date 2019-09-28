@@ -3,7 +3,6 @@
         margin: 0 0 0px;
     }
 </style>
-<p><?php echo $this->session->flashdata('verify_msg'); ?></p>
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -11,6 +10,16 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Register</h3>
                 </div>
+                <?php if($this->session->flashdata('msg_success')) { ?>
+                    <div class="alert alert-success">
+                         <?php echo $this->session->flashdata('msg_success'); ?>       
+                    </div>
+                 <?php } ?>
+                 <?php if($this->session->flashdata('msg_error')) { ?>
+                    <div class="alert alert-danger">
+                         <?php echo $this->session->flashdata('msg_error'); ?>       
+                    </div>
+                <?php } ?>
                 <div class="panel-body">
                     <?php $attributes = array("name" => "registrationform", "role" => "form" );
                     echo form_open("users/register", $attributes);?>
@@ -38,7 +47,7 @@
 
                         <div class="form-group <?php echo form_error('cpassword') ? 'has-error' : '' ?>">
                             <label class="control-label" for="inputError"><?php echo form_error('cpassword'); ?></label>
-                            <input class="form-control" placeholder="Confirm Password" name="password" type="password" value="">
+                            <input class="form-control" placeholder="Confirm Password" name="cpassword" type="password" value="">
                         </div>
 
                         <button class="btn btn-success btn-block">Register</button>
@@ -52,6 +61,3 @@
         </div>
     </div>
 </div>
-
-<p class="text-success"><?php echo $this->session->flashdata('msg_success'); ?></p>
-<p class="text-success"><?php echo $this->session->flashdata('msg_error'); ?></p>

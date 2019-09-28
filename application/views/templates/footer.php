@@ -15,6 +15,16 @@
 <!-- Custom Theme JavaScript -->
 <script src="<?=base_url()?>assets/js/sb-admin-2.js"></script>
 
+<script>
+	$(window).bind("load", function() {
+		window.setTimeout(function() {
+			$(".alert").fadeTo(500, 0).slideUp(500, function(){
+				$(this).remove();
+			});
+		}, 4000);
+	});
+</script>
+
 </body>
 
 </html>

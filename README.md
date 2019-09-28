@@ -7,6 +7,7 @@
 [![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin/status.svg)](#)
 [![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin/dev-status.svg)](#)
 
+##Live Demo <a href="https://gowtham-codeigniter-crud-app.herokuapp.com/">Click</a>
 #### Key Features
 - 1 . Register
 - 2 . Login
@@ -22,11 +23,15 @@
 ``` 
  1. git clone https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register
 
- 2. Change database.php(application/config) MYSQL CONFIGURATIONS (name, user, password)
+ 2. Change database.php(application/config) MYSQL CONFIGURATIONS (name, user, password, host)
 
  3.  import Your test.sql(sql folder) file to local
 
  4. configure Apache server
+
+ 5. Email: gowthaman.nkl1@gmail.com
+ 
+ 6. Password : Welcome@123
 
 ```
 # Dont't Forgot Give star(*) and fork(^)

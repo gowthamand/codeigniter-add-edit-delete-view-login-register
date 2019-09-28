@@ -83,7 +83,6 @@ class News extends CI_Controller {
         }
 
         $id = $this->uri->segment(3);
-        //$id = $this->input->post('id');
 
         if (empty($id)) {
             show_404();
@@ -92,7 +91,7 @@ class News extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $data['title'] = 'Edit a news item';
+        $data['title'] = 'Edit News';
         $data['news_item'] = $this->news_model->get_news_by_id($id);
 
         if ($data['news_item']['user_id'] != $this->session->userdata('user_id')) {

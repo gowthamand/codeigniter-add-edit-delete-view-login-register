@@ -10,15 +10,17 @@ class Users extends CI_Controller {
     }
 
     public function index() {
-        $this->register();
+        $this->login();
     }
 
     public function register() {
-        $this->form_validation->set_rules('firstname', 'First Name', 'trim|required|alpha|min_length[3]|max_length[50]');
-        $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[50]');
+        $this->form_validation->set_rules('firstname','First Name','trim|required');
+        $this->form_validation->set_rules('lastname','Last Name','trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
-        $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|matches[password]');
+        $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|matches[password]|md5');
+
+
         $data['title'] = 'Register';
 
         if ($this->form_validation->run() === FALSE) {
@@ -29,7 +31,7 @@ class Users extends CI_Controller {
         } else {
             if ($this->user_model->set_user()) {
                 $this->session->set_flashdata('msg_success', 'Registration Successful!');
-                redirect('users/register');
+                redirect('users/login');
             } else {
                 $this->session->set_flashdata('msg_error', 'Error! Please try again later.');
                 redirect('users/register');
@@ -53,17 +55,9 @@ class Users extends CI_Controller {
 
         } else {
             if ($user = $this->user_model->get_user_login($email, $password)) {
-                /*$user_data = array(
-                              'email' => $email,
-                              'is_logged_in' => true
-                         );
-                     
-                $this->session->set_userdata($user_data);*/
-
                 $this->session->set_userdata('email', $email);
                 $this->session->set_userdata('user_id', $user['id']);
                 $this->session->set_userdata('is_logged_in', true);
-
 
                 $this->session->set_flashdata('msg_success', 'Login Successful!');
                 redirect('news');
