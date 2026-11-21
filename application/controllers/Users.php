@@ -16,7 +16,11 @@ class Users extends CI_Controller {
     public function register() {
         $this->form_validation->set_rules('firstname','First Name','trim|required');
         $this->form_validation->set_rules('lastname','Last Name','trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]');
+        // is_unique[] needs a SQL database; check uniqueness in Redis instead.
+        $this->form_validation->set_rules('email', 'Email', array(
+            'trim', 'required', 'valid_email',
+            array('email_available', array($this->user_model, 'email_available')),
+        ), array('email_available' => 'The {field} is already registered.'));
         $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|matches[password]|md5');
 

@@ -118,4 +118,10 @@ class User_model extends CI_Model {
     {
         return 'ci_user:email:' . strtolower(trim($email));
     }
+
+    /** Form validation callback: TRUE when no user has this email yet. */
+    public function email_available($email)
+    {
+        return ! $this->redis_client->exists($this->email_key($email));
+    }
 }
