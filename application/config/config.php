@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = '';
-$config['base_url'] = "http://codeigniter.co.in/";
+$config['base_url'] = getenv('BASE_URL') ?: "http://codeigniter.co.in/";
 
 /*
 |--------------------------------------------------------------------------

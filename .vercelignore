@@ -1,0 +1,11 @@
+user_guide
+tests
+screenshots
+*.zip
+.env
+composer.json
+composer.lock
+Dockerfile
+docker-compose.yml
+sql
+*.sql

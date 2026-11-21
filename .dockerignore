@@ -1,0 +1,8 @@
+.git
+.env
+vendor
+user_guide
+tests
+screenshots
+*.zip
+.vercel

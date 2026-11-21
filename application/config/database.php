@@ -87,7 +87,7 @@ $db['default'] = array(
 	'password' => 'welcome',
 	'database' => 'codeigniter',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => 'ci_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,

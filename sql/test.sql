@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Table structure for table `ci_news`
 --
 
-CREATE TABLE `news` (
+CREATE TABLE `ci_news` (
   `id` int(11) NOT NULL,
   `title` varchar(128) NOT NULL,
   `slug` varchar(128) NOT NULL,
@@ -35,10 +35,10 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `news`
+-- Dumping data for table `ci_news`
 --
 
-INSERT INTO `news` (`id`, `title`, `slug`, `text`, `user_id`) VALUES
+INSERT INTO `ci_news` (`id`, `title`, `slug`, `text`, `user_id`) VALUES
 (2, 'What is Lorem Ipsum?', 'what-is-lorem-ipsum', 'Lorem Ipsum is simply dummy text.x', 1),
 (3, 'My test', 'my-test', 'hello there', 2),
 (4, 'What is Lorem Ipsum?', 'what-is-lorem-ipsum', 'adsadsd', 1),
@@ -47,10 +47,10 @@ INSERT INTO `news` (`id`, `title`, `slug`, `text`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `ci_user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `ci_user` (
   `id` int(10) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -60,10 +60,10 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `ci_user`
 --
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`, `updated_at`) VALUES
+INSERT INTO `ci_user` (`id`, `firstname`, `lastname`, `email`, `password`, `updated_at`) VALUES
 (1, 'Gowthaman', 'Durai', 'gowthaman.nkl1@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2018-11-08 17:22:58');
 
 --
@@ -71,16 +71,16 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`, `updated
 --
 
 --
--- Indexes for table `news`
+-- Indexes for table `ci_news`
 --
-ALTER TABLE `news`
+ALTER TABLE `ci_news`
   ADD PRIMARY KEY (`id`),
   ADD KEY `slug` (`slug`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `ci_user`
 --
-ALTER TABLE `user`
+ALTER TABLE `ci_user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_email_unique` (`email`);
 
@@ -89,14 +89,14 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `news`
+-- AUTO_INCREMENT for table `ci_news`
 --
-ALTER TABLE `news`
+ALTER TABLE `ci_news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `ci_user`
 --
-ALTER TABLE `user`
+ALTER TABLE `ci_user`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
