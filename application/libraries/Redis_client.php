@@ -21,13 +21,14 @@ class Redis_client {
 		$CI->config->load('redis', TRUE);
 		$cfg = $CI->config->item('redis');
 
+		if ($cfg['redis_password'] === '')
+		{
+			show_error('REDIS_PASSWORD is not set. Add it to .env (Docker) or to the Vercel project\'s Environment Variables, then redeploy.', 500, 'Redis is not configured');
+		}
+
 		$this->redis = new Redis();
 		$this->redis->connect($cfg['redis_host'], $cfg['redis_port'], $cfg['redis_timeout']);
-
-		if ($cfg['redis_password'] !== '')
-		{
-			$this->redis->auth($cfg['redis_password']);
-		}
+		$this->redis->auth($cfg['redis_password']);
 	}
 
 	/** Proxy any call (get, set, del, expire, ...) to the Redis instance. */
