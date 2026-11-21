@@ -1,44 +1,108 @@
-# <a href="https://github.com/gowthamand/codeIgniter-add-edit-delete-view-login-register">CodeIgniter Crud, Ajax, Login, Register,Dashboard Etc..</a>
-### Status
+# <a href="https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register">CodeIgniter CRUD, Login, Register, Dashboard</a>
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](#)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-sb-admin.svg)](#)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-sb-admin.svg)](#)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin/status.svg)](#)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin/dev-status.svg)](#)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PHP](https://img.shields.io/badge/PHP-7.4-777BB4.svg)](#)
+[![CodeIgniter](https://img.shields.io/badge/CodeIgniter-3.1.9-EE4323.svg)](#)
+[![Redis](https://img.shields.io/badge/Redis-Upstash-DC382D.svg)](#)
+[![Deploy](https://img.shields.io/badge/deploy-Vercel-black.svg)](#)
 
-## Live Demo <a href="https://gowtham-codeigniter-crud-app.herokuapp.com/">Click</a>
-#### Key Features
-- 1 . Register
-- 2 . Login
-- 3 . File Upload
-- 4 . Form Validation
-- 5 . CRUD Application
-- 6 . Ajax CRUD Application
-- 7 . File Upload
-- 8 . CSV Import
-- 9 . CSV Export
+## Live Demo
 
-# Step for Set Up
-``` 
- 1. git clone https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register
+👉 **https://codeigniter-add-edit-delete-view-lo.vercel.app/**
 
- 2. Change database.php(application/config) MYSQL CONFIGURATIONS (name, user, password, host)
+Register a new account to try it.
 
- 3.  import Your test.sql(sql folder) file to local
+## Key Features
 
- 4. configure Apache server
+- Register / Login
+- News CRUD (create, list, edit, delete), each user sees only their own items
+- Form validation
+- Data stored in **Redis** (Upstash), no MySQL needed
+- Runs locally with **Docker**, deploys to **Vercel**
 
- 5. Email: gowthaman.nkl1@gmail.com
- 
- 6. Password : Welcome@123
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | CodeIgniter 3.1.9 |
+| Language | PHP 7.4 |
+| Database | Redis ([Upstash](https://upstash.com), TLS) via phpredis |
+| Local runtime | Docker (`php:7.4-apache`) |
+| Hosting | Vercel ([`vercel-php`](https://github.com/vercel-community/php) runtime) |
+
+## Data Model (Redis)
+
+All keys are prefixed with `ci_`.
+
+| Key | Type | Description |
+|---|---|---|
+| `ci_user:{id}` | hash | id, firstname, lastname, email, password (md5), updated_at |
+| `ci_user:email:{email}` | string | email → user id (unique lookup) |
+| `ci_user:ids` | set | all user ids |
+| `ci_user:next_id` | counter | next user id |
+| `ci_news:{id}` | hash | id, title, slug, text, user_id |
+| `ci_news:user:{user_id}` | set | news ids owned by a user |
+| `ci_news:ids` | set | all news ids |
+| `ci_news:next_id` | counter | next news id |
+
+## Configuration
+
+Settings come from environment variables. Never commit the real password.
+
+| Variable | Required | Default |
+|---|---|---|
+| `REDIS_PASSWORD` | ✅ | none |
+| `REDIS_HOST` | | `tls://upward-seahorse-124306.upstash.io` |
+| `REDIS_PORT` | | `6379` |
+| `BASE_URL` | | auto-detected from the request |
+
+## Run Locally (Docker)
+
+```bash
+git clone https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register
+cd codeigniter-add-edit-delete-view-login-register
+
+cp .env.example .env        # then set REDIS_PASSWORD in .env
+docker compose up --build
+```
+
+Open http://localhost:8080
+
+Optional: load sample news data:
+
+```bash
+docker compose exec app php index.php seed
+```
+
+Check the Redis connection: http://localhost:8080/redis_test (prints `bar`).
+
+## Deploy to Vercel
+
+```bash
+npx vercel link
+npx vercel env add REDIS_PASSWORD --environment production --sensitive
+npx vercel --prod
+```
+
+`vercel.json` runs `api/index.php` with `vercel-php@0.3.6` (PHP 7.4) and serves `assets/` as static files.
+Pushing to `master` also deploys automatically if the repo is connected to Vercel.
+
+## Project Structure
 
 ```
-# Dont't Forgot Give star(*) and fork(^)
+api/index.php                      Vercel entry point
+application/config/redis.php       Redis settings (from env vars)
+application/libraries/Redis_client.php
+application/models/User_model.php  Users on Redis
+application/models/News_model.php  News on Redis
+application/controllers/Seed.php   CLI: php index.php seed
+Dockerfile, docker-compose.yml     Local Docker setup
+vercel.json                        Vercel config
+sql/test.sql                       Legacy MySQL schema (reference only)
+```
 
+## Screenshots
 
-## Screen Shots
+[![Preview](https://raw.githubusercontent.com/gowthamand/codeigniter-add-edit-delete-view-login-register/master/screenshots/codei.png)](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register)
 
-[![SB Admin Preview](https://raw.githubusercontent.com/gowthamand/codeigniter-add-edit-delete-view-login-register/master/screenshots/codei.png)](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register)
-
-# Now CodeIgniter Project Ready
+## ⭐ Don't forget to give a star and fork!

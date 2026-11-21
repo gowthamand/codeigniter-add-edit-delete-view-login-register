@@ -32,3 +32,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .env
 .vercel
 
+.env*
