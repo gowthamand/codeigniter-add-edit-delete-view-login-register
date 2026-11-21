@@ -8,7 +8,7 @@
 <script src="<?=base_url()?>assets/plugins/metisMenu/metisMenu.min.js"></script>
 
 <!-- Morris Charts JavaScript -->
-<script src=".<?=base_url()?>assets/plugins/raphael/raphael.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/raphael/raphael.min.js"></script>
 <script src="<?=base_url()?>assets/plugins/morrisjs/morris.min.js"></script>
 <script src="<?=base_url()?>assets/data/morris-data.js"></script>
 

@@ -24,7 +24,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = '';
-$config['base_url'] = getenv('BASE_URL') ?: "http://codeigniter.co.in/";
+// Use BASE_URL if set; otherwise build it from the current request so it works
+// on localhost, Docker and Vercel (which terminates HTTPS at its proxy).
+if (getenv('BASE_URL')) {
+	$config['base_url'] = rtrim(getenv('BASE_URL'), '/') . '/';
+} elseif (isset($_SERVER['HTTP_HOST'])) {
+	$https = ( ! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+		|| (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+	$config['base_url'] = ($https ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+} else {
+	$config['base_url'] = 'http://localhost/';
+}
 
 /*
 |--------------------------------------------------------------------------
