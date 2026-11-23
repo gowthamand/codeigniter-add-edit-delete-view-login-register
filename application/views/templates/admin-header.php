@@ -10,6 +10,8 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
+    <link rel="icon" type="image/svg+xml" href="<?php echo base_url("assets/img/favicon.svg"); ?>">
+
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url() ?>assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
