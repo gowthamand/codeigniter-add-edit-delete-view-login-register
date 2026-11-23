@@ -103,6 +103,8 @@ sql/test.sql                       Legacy MySQL schema (reference only)
 
 ## Screenshots
 
-[![Preview](https://raw.githubusercontent.com/gowthamand/codeigniter-add-edit-delete-view-login-register/master/screenshots/codei.png)](https://github.com/gowthamand/codeigniter-add-edit-delete-view-login-register)
+| Login | News Archive | Add News |
+|---|---|---|
+| ![Login](screenshots/login.png) | ![News Archive](screenshots/news-archive.png) | ![Add News](screenshots/add-news.png) |
 
 ## ⭐ Don't forget to give a star and fork!
