@@ -10,21 +10,6 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Manage
-            </div>
-
-            <!-- Nav Item - Add News -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('news/create'); ?>">
-                    <i class="fas fa-fw fa-plus"></i>
-                    <span>Add News</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
                 Interface
             </div>
 
