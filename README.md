@@ -5,6 +5,8 @@
 [![CodeIgniter](https://img.shields.io/badge/CodeIgniter-3.1.9-EE4323.svg)](#)
 [![Redis](https://img.shields.io/badge/Redis-Upstash-DC382D.svg)](#)
 
+👉 [**Live Demo**](https://codeigniter-add-edit-delete-view-lo.vercel.app/)
+
 ## Key Features
 
 - Register / Login
