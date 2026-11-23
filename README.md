@@ -4,13 +4,6 @@
 [![PHP](https://img.shields.io/badge/PHP-7.4-777BB4.svg)](#)
 [![CodeIgniter](https://img.shields.io/badge/CodeIgniter-3.1.9-EE4323.svg)](#)
 [![Redis](https://img.shields.io/badge/Redis-Upstash-DC382D.svg)](#)
-[![Deploy](https://img.shields.io/badge/deploy-Vercel-black.svg)](#)
-
-## Live Demo
-
-👉 [**https://codeigniter-add-edit-delete-view-lo.vercel.app/**](https://codeigniter-add-edit-delete-view-lo.vercel.app/)
-
-Register a new account to try it.
 
 ## Key Features
 
@@ -18,7 +11,7 @@ Register a new account to try it.
 - News CRUD (create, list, edit, delete), each user sees only their own items
 - Form validation
 - Data stored in **Redis** (Upstash), no MySQL needed
-- Runs locally with **Docker**, deploys to **Vercel**
+- Runs locally with **Docker**
 
 ## Tech Stack
 
@@ -28,7 +21,6 @@ Register a new account to try it.
 | Language | PHP 7.4 |
 | Database | Redis ([Upstash](https://upstash.com), TLS) via phpredis |
 | Local runtime | Docker (`php:7.4-apache`) |
-| Hosting | Vercel ([`vercel-php`](https://github.com/vercel-community/php) runtime) |
 
 ## Data Model (Redis)
 
@@ -76,28 +68,15 @@ docker compose exec app php index.php seed
 
 Check the Redis connection: http://localhost:8080/redis_test (prints `bar`).
 
-## Deploy to Vercel
-
-```bash
-npx vercel link
-npx vercel env add REDIS_PASSWORD --environment production --sensitive
-npx vercel --prod
-```
-
-`vercel.json` runs `api/index.php` with `vercel-php@0.3.6` (PHP 7.4) and serves `assets/` as static files.
-Pushing to `master` also deploys automatically if the repo is connected to Vercel.
-
 ## Project Structure
 
 ```
-api/index.php                      Vercel entry point
 application/config/redis.php       Redis settings (from env vars)
 application/libraries/Redis_client.php
 application/models/User_model.php  Users on Redis
 application/models/News_model.php  News on Redis
 application/controllers/Seed.php   CLI: php index.php seed
 Dockerfile, docker-compose.yml     Local Docker setup
-vercel.json                        Vercel config
 sql/test.sql                       Legacy MySQL schema (reference only)
 ```
 
