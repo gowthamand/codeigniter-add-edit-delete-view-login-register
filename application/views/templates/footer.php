@@ -1,22 +1,17 @@
 <!-- jQuery -->
-<script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Metis Menu Plugin JavaScript -->
-<script src="<?=base_url()?>assets/plugins/metisMenu/metisMenu.min.js"></script>
-
-<!-- Morris Charts JavaScript -->
-<script src="<?=base_url()?>assets/plugins/raphael/raphael.min.js"></script>
-<script src="<?=base_url()?>assets/plugins/morrisjs/morris.min.js"></script>
-<script src="<?=base_url()?>assets/data/morris-data.js"></script>
+<!-- Core plugin JavaScript -->
+<script src="<?= base_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?=base_url()?>assets/js/sb-admin-2.js"></script>
+<script src="<?= base_url() ?>assets/js/sb-admin-2.min.js"></script>
 
 <script>
-	$(window).bind("load", function() {
+	$(window).on("load", function() {
 		window.setTimeout(function() {
 			$(".alert").fadeTo(500, 0).slideUp(500, function(){
 				$(this).remove();

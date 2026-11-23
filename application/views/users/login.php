@@ -1,57 +1,73 @@
-<p>
-    <?php echo $this->session->flashdata('verify_msg'); ?>
-</p>
-<style>
-    p {
-        margin: 0 0 0px;
-    }
-</style>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-default">
-                <?php if($this->session->flashdata('msg_success')) { ?>
-                    <div class="alert alert-success">
-                         <?php echo $this->session->flashdata('msg_success'); ?>       
+
+    <?php if($this->session->flashdata('msg_success')) { ?>
+        <div class="alert alert-success">
+            <?php echo $this->session->flashdata('msg_success'); ?>
+        </div>
+    <?php } ?>
+    <?php if($this->session->flashdata('msg_error')) { ?>
+        <div class="alert alert-danger">
+            <?php echo $this->session->flashdata('msg_error'); ?>
+        </div>
+    <?php } ?>
+    <?php if($this->session->flashdata('verify_msg')) { ?>
+        <div class="alert alert-info">
+            <?php echo $this->session->flashdata('verify_msg'); ?>
+        </div>
+    <?php } ?>
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-6 col-lg-8 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Please Sign In</h1>
+                                </div>
+                                <?php $attributes = array("name" => "loginform", "role" => "form"); ?>
+                                <?php echo form_open("users/login", $attributes); ?>
+                                <div class="form-group <?php echo form_error('email') ? 'has-error' : '' ?>">
+                                    <label class="control-label text-danger" for="inputError"><?php echo form_error('email'); ?></label>
+                                    <input class="form-control form-control-user" placeholder="E-mail" name="email" type="email" autofocus>
+                                </div>
+                                <div class="form-group <?php echo form_error('password') ? 'has-error' : '' ?>">
+                                    <label class="control-label text-danger" for="inputError"><?php echo form_error('password'); ?></label>
+                                    <input class="form-control form-control-user" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="remember" value="Remember Me">
+                                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Login
+                                </button>
+                                <?php echo form_close(); ?>
+                                <hr>
+                                <div class="text-center">
+                                    <a class="small" href="#">Forgot Password?</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="<?php echo site_url('users/register'); ?>">Create an Account!</a>
+                                </div>
+                                <div class="mt-4 text-center text-muted small">
+                                    <p>Email: gowthaman.nkl1@gmail.com</p>
+                                    <p>Password: Welcome@123</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                 <?php } ?>
-                 <?php if($this->session->flashdata('msg_error')) { ?>
-                    <div class="alert alert-danger">
-                         <?php echo $this->session->flashdata('msg_error'); ?>       
-                    </div>
-                <?php } ?>
-                <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
-                </div>
-                <div class="panel-body">
-                    <?php $attributes = array("name" => "loginform", "role" => "form" );
-                        echo form_open("users/login", $attributes);?>
-                        <fieldset>
-                            <div class="form-group <?php echo form_error('email') ? 'has-error' : '' ?>">
-                                <label class="control-label" for="inputError"><?php echo form_error('email'); ?></label>
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                            </div>
-                            <div class="form-group <?php echo form_error('password') ? 'has-error' : '' ?>">
-                                <label class="control-label" for="inputError"><?php echo form_error('password'); ?></label>
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                </label>
-                            </div>
-                            <button class="btn btn-success btn-block">Login</button>
-                            <div style="padding-top: 10px;">
-                                <a href=""><label style="cursor: pointer;">Forgot Password</label></a> <a href="/users/register" class="pull-right"><label style="cursor: pointer;">Register</label></a>
-                            </div>
-                        </fieldset>
-                    <?php echo form_close(); ?>
-					<div class="col-md-12">
-						<p>Email: gowthaman.nkl1@gmail.com </p>
-						<p>Password: Welcome@123</p>
-					</div>
                 </div>
             </div>
+
         </div>
+
     </div>
+
 </div>
