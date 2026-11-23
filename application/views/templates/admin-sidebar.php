@@ -65,18 +65,60 @@
                     <span>Forms</span></a>
             </li>
 
+            <!-- Nav Item - UI Elements Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUiElements"
+                    aria-expanded="true" aria-controls="collapseUiElements">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>UI Elements</span>
+                </a>
+                <div id="collapseUiElements" class="collapse" aria-labelledby="headingUiElements" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">UI Elements:</h6>
+                        <a class="collapse-item" href="#">Panels and Wells</a>
+                        <a class="collapse-item" href="#">Buttons</a>
+                        <a class="collapse-item" href="#">Notifications</a>
+                        <a class="collapse-item" href="#">Typography</a>
+                        <a class="collapse-item" href="#">Icons</a>
+                        <a class="collapse-item" href="#">Grid</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Multi-Level Dropdown -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMultiLevel"
+                    aria-expanded="true" aria-controls="collapseMultiLevel">
+                    <i class="fas fa-fw fa-sitemap"></i>
+                    <span>Multi-Level Dropdown</span>
+                </a>
+                <div id="collapseMultiLevel" class="collapse" aria-labelledby="headingMultiLevel" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Second Level:</h6>
+                        <a class="collapse-item" href="#">Second Level Item</a>
+                        <a class="collapse-item" href="#">Second Level Item</a>
+                        <h6 class="collapse-header">Third Level:</h6>
+                        <a class="collapse-item" href="#">Third Level Item</a>
+                        <a class="collapse-item" href="#">Third Level Item</a>
+                        <a class="collapse-item" href="#">Third Level Item</a>
+                        <a class="collapse-item" href="#">Third Level Item</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Sample Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="<?php echo site_url('users/login'); ?>">Login</a>
                         <a class="collapse-item" href="<?php echo site_url('users/register'); ?>">Register</a>
+                        <a class="collapse-item" href="#">Blank Page</a>
                     </div>
                 </div>
             </li>
@@ -105,6 +147,19 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
