@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-👉 **https://codeigniter-add-edit-delete-view-lo.vercel.app/**
+👉 [**https://codeigniter-add-edit-delete-view-lo.vercel.app/**](https://codeigniter-add-edit-delete-view-lo.vercel.app/)
 
 Register a new account to try it.
 
