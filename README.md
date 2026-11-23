@@ -82,8 +82,13 @@ sql/test.sql                       Legacy MySQL schema (reference only)
 
 ## Screenshots
 
-| Login | News Archive | Add News |
-|---|---|---|
-| ![Login](screenshots/login.png) | ![News Archive](screenshots/news-archive.png) | ![Add News](screenshots/add-news.png) |
+**Login**
+![Login](screenshots/login.png)
+
+**News Archive**
+![News Archive](screenshots/news-archive.png)
+
+**Add News**
+![Add News](screenshots/add-news.png)
 
 ## ⭐ Don't forget to give a star and fork!
