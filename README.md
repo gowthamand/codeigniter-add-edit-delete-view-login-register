@@ -5,7 +5,7 @@
 [![CodeIgniter](https://img.shields.io/badge/CodeIgniter-3.1.9-EE4323.svg)](#)
 [![Redis](https://img.shields.io/badge/Redis-Upstash-DC382D.svg)](#)
 
-[![Live Demo](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1200&color=22C55E&center=true&vCenter=true&width=460&height=45&lines=%F0%9F%9A%80+Live+Demo+%E2%80%94+Click+to+Try+It!)](https://codeigniter-add-edit-delete-view-lo.vercel.app/)
+[![Live Demo](https://capsule-render.vercel.app/api?type=rect&color=0:22C55E,100:16A34A&height=50&width=300&text=%F0%9F%9A%80%20Live%20Demo&fontSize=22&fontColor=ffffff&animation=twinkling)](https://codeigniter-add-edit-delete-view-lo.vercel.app/)
 
 ## Key Features
 
