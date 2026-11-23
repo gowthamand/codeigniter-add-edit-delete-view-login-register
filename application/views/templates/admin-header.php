@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>News CRUD - CodeIgniter</title>
 
     <link rel="icon" type="image/svg+xml" href="<?php echo base_url("assets/img/favicon.svg"); ?>">
 
@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-newspaper"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">News CRUD</div>
             </a>
 
             <!-- Divider -->

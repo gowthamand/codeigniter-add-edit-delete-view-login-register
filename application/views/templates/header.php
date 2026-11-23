@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>News CRUD - CodeIgniter</title>
 
     <link rel="icon" type="image/svg+xml" href="<?php echo base_url("assets/img/favicon.svg"); ?>">
 
